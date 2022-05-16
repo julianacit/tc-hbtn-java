@@ -7,7 +7,7 @@ public class PrintFormatacaoNumeros {
         Locale locale = new Locale("pt", "BR");
         NumberFormat formatValor = NumberFormat.getInstance(locale);
         formatValor.setMaximumFractionDigits(2);
-        System.out.println("Valor: R$ " + formatValor.format(valor));
+        System.out.printf("Valor: R$ %s%n", formatValor.format(valor));
         System.out.printf("Taxa: %.2f%%%n",taxa);
     }
 }
