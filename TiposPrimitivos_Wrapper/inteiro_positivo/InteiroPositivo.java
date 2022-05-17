@@ -1,3 +1,5 @@
+//Na parte do Program deveria ser verificado se o objeto foi de fato criado (isEmpty), já que se não, o setValor não funcionará (Fail Fast)
+//Continua o fluxo do programa com valores nulos, o que gera erros
 public class InteiroPositivo {
     private int valor;
 
@@ -33,7 +35,7 @@ public class InteiroPositivo {
     }
 
     private void verificacaoPositivo (int valor) {
-        if (valor > -1 && (int)valor == valor) {
+        if (valor > -1) { //Teste não envolve verificação de inteiros pois não irá compilar caso ocorra, já que não existe construtor para double, apenas int
             this.valor = valor;
         }
         else {
