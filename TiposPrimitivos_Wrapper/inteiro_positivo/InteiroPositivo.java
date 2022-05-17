@@ -2,19 +2,13 @@ public class InteiroPositivo {
     private int valor;
 
     public InteiroPositivo (int valor) {
-        if (valor > -1) {
-            this.valor = valor;
-        }
-        else {
-            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
-        }
+        verificacaoPositivo(valor);
     }
+
     public InteiroPositivo (String valor) {
         try {
-            this.valor = Integer.parseInt(valor);
-            if (this.valor < 0) {
-                throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
-            }
+            int stringChecker = Integer.parseInt(valor);
+            verificacaoPositivo(stringChecker);
         }
         catch (Exception ex) {
             throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
@@ -25,12 +19,7 @@ public class InteiroPositivo {
         return valor;
     }
     public void setValor (int valor) {
-        if (valor > -1) {
-            this.valor = valor;
-        }
-        else {
-            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
-        }
+        verificacaoPositivo(valor);
     }
 
     public boolean ehPrimo () {
@@ -41,5 +30,14 @@ public class InteiroPositivo {
             if (valor%i == 0) return false;
         }
         return true;
+    }
+
+    private void verificacaoPositivo (int valor) {
+        if (valor > -1 && (int)valor == valor) {
+            this.valor = valor;
+        }
+        else {
+            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
+        }
     }
 }
