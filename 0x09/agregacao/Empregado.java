@@ -38,6 +38,6 @@ public class Empregado {
         System.out.println("Nome: " + this.nome);
         System.out.println("Bairro: " + this.endereco.getBairro());
         System.out.println("Cidade: " + this.endereco.getCidade());
-        System.out.println("Pais: " + this.endereco.getPais());
+        System.out.print("Pais: " + this.endereco.getPais());
     }
 }
