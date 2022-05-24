@@ -12,7 +12,7 @@ public class Pedido {
     }
 
     public void apresentarResumoPedido() {
-        NumberFormat formatValor = NumberFormat.getInstance(new Locale("pt", "PT"));
+        NumberFormat formatValor = NumberFormat.getInstance(new Locale("pt", "BR"));
         formatValor.setMaximumFractionDigits(2);
         formatValor.setMinimumFractionDigits(2);
         System.out.println("------- RESUMO PEDIDO -------");
