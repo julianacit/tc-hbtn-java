@@ -20,7 +20,7 @@ public class Pedido {
             Produto produto = item.getProduto();
             double valorTotalProduto = produto.obterPrecoLiquido() * item.getQuantidade();
             total += valorTotalProduto;
-            System.out.printf("Tipo: %s Titulo: %s Preco: %s Quant: %d Total: %s%n",
+            System.out.printf("Tipo: %s  Titulo: %s  Preco: %s  Quant: %d  Total: %s%n",
                     produto.getClass().getSimpleName(), produto.getTitulo(), formatValor.format(produto.obterPrecoLiquido()),
                     item.getQuantidade(), formatValor.format(valorTotalProduto));
         }
