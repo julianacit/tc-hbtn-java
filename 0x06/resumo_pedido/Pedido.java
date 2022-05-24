@@ -1,7 +1,6 @@
 import java.util.*;
 import java.text.*;
 import produtos.*;
-import java.math.RoundingMode;
 
 public class Pedido {
     private double percentualDesconto;
@@ -16,15 +15,14 @@ public class Pedido {
         NumberFormat formatValor = NumberFormat.getInstance(new Locale("pt", "BR"));
         formatValor.setMaximumFractionDigits(2);
         formatValor.setMinimumFractionDigits(2);
-        formatValor.setRoundingMode(RoundingMode.HALF_UP);
         System.out.println("------- RESUMO PEDIDO -------");
         double total = 0;
         for (ItemPedido item: itens) {
             Produto produto = item.getProduto();
             double valorTotalProduto = produto.obterPrecoLiquido() * item.getQuantidade();
             total += valorTotalProduto;
-            System.out.printf("Tipo: %s  Titulo: %s  Preco: %,.2f  Quant: %d  Total: %s%n",
-                    produto.getClass().getSimpleName(), produto.getTitulo(), produto.obterPrecoLiquido(),
+            System.out.printf("Tipo: %s  Titulo: %s  Preco: %s  Quant: %d  Total: %s%n",
+                    produto.getClass().getSimpleName(), produto.getTitulo(), formatValor.format(Math.round(produto.obterPrecoLiquido() * 100.0) / 100.0),
                     item.getQuantidade(), formatValor.format(valorTotalProduto));
         }
         System.out.println("----------------------------");
