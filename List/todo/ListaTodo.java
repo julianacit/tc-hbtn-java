@@ -10,7 +10,7 @@ public class ListaTodo {
     public void adicionarTarefa(Tarefa tarefa) {
         int identificador = tarefa.getIdentificador();
         tarefas.stream().forEach(t -> {
-            if (tarefa.getIdentificador() == t.getIdentificador()) throw new RuntimeException("Tarefa com identificador " + identificador + " ja existente na lista");
+            if (tarefa.getIdentificador() == t.getIdentificador()) throw new IllegalArgumentException("Tarefa com identificador " + identificador + " ja existente na lista");
         });
         tarefas.add(tarefa);
     }
@@ -45,8 +45,8 @@ public class ListaTodo {
 
     public void listarTarefas() {
         tarefas.stream().forEach(tarefa -> {
-            if (tarefa.isEstahFeita()) System.out.println("[X] Id: " + tarefa.getIdentificador() + " - Descricao: " + tarefa.getDescricao());
-            else System.out.println("[ ] Id: " + tarefa.getIdentificador() + " - Descricao: " + tarefa.getDescricao());
+            if (tarefa.isEstahFeita()) System.out.println("[X]  Id: " + tarefa.getIdentificador() + " - Descricao: " + tarefa.getDescricao());
+            else System.out.println("[ ]  Id: " + tarefa.getIdentificador() + " - Descricao: " + tarefa.getDescricao());
         });
     }
 }
