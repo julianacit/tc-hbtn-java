@@ -6,9 +6,7 @@ public class Tarefa {
     private int identificador;
 
     public Tarefa(String descricao, int identificador) {
-        if (descricao == null || descricao.isEmpty()) {
-            throw new IllegalArgumentException("Descricao de tarefa invalida");
-        }
+        this.modificarDescricao(descricao);
         this.descricao = descricao;
         this.identificador = identificador;
     }
@@ -42,11 +40,6 @@ public class Tarefa {
 
     public void setIdentificador(int identificador) {
         this.identificador = identificador;
-    }
-
-    public boolean equals(Tarefa tarefa) {
-        if (this.identificador == tarefa.getIdentificador()) return true;
-        else return false;
     }
 
 }

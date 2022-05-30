@@ -28,7 +28,7 @@ public class ListaTodo {
     public boolean desfazerTarefa(int identificador) {
         for (Tarefa tarefa: tarefas) {
             if (tarefa.getIdentificador() == identificador) {
-                tarefa.setEstahFeita(true);
+                tarefa.setEstahFeita(false);
                 return true;
             }
         }
