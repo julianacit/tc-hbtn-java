@@ -1,12 +1,20 @@
 import java.util.*;
 
-public class Telefone {
+public class Telefone implements Comparable<Telefone>{
     private String codigoArea;
     private String numero;
 
     public Telefone(String codigoArea, String numero) {
         this.codigoArea = codigoArea;
         this.numero = numero;
+    }
+
+    public String getCodigoArea() {
+        return codigoArea;
+    }
+
+    public String getNumero() {
+        return numero;
     }
 
     @java.lang.Override
@@ -28,5 +36,15 @@ public class Telefone {
         result = 31 * result + codigoArea.hashCode();
         result = 31 * result + numero.hashCode();
         return result;
+    }
+
+    @Override
+    public int compareTo(Telefone tel) {
+        int compareCod = codigoArea.compareTo(tel.getCodigoArea());
+
+        if (compareCod == 0) {
+            return numero.compareTo(tel.getNumero());
+        }
+        else return compareCod;
     }
 }

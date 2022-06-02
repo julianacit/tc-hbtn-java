@@ -30,7 +30,9 @@ public class ListaTelefonica {
         return telefones;
     }
 
-    public HashSet<Telefone> buscar(String nome) {
-        return this.listaTelefonica.get(nome);
+    public TreeSet<Telefone> buscar(String nome) {
+        HashSet<Telefone> telefones = this.listaTelefonica.get(nome);
+        if (telefones == null) return null;
+        return new TreeSet<Telefone>(telefones);
     }
 }

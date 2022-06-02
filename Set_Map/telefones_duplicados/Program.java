@@ -34,25 +34,26 @@ public class Program {
             System.out.println(ex.getMessage());
         }
 
-        Set<Telefone> telefones1 = listaTelefonica1.buscar("Pedro Alvaro");
+        TreeSet<Telefone> telefones1 = listaTelefonica1.buscar("Pedro Alvaro");
+        TreeSet<Telefone> reverseOrder = (TreeSet<Telefone>)telefones1.descendingSet();
         if (telefones1 == null)
             System.out.println("Telefones na encontrados");
         else
-            System.out.println(telefones1);
+            System.out.println(reverseOrder);
 
-        Set<Telefone> telefones2 = listaTelefonica1.buscar("Maria Joaquina");
+        TreeSet<Telefone> telefones2 = listaTelefonica1.buscar("Maria Joaquina");
         if (telefones2 == null)
             System.out.println("Telefones na encontrados");
         else
             System.out.println(telefones2);
 
-        Set<Telefone> telefones3 = listaTelefonica1.buscar("Carlos Alberto");
+        TreeSet<Telefone> telefones3 = listaTelefonica1.buscar("Carlos Alberto");
         if (telefones3 == null)
             System.out.println("Telefones na encontrados");
         else
             System.out.println(telefones3);
 
-        Set<Telefone> telefones4 = listaTelefonica1.buscar("Jose Oliveira");
+        TreeSet<Telefone> telefones4 = listaTelefonica1.buscar("Jose Oliveira");
         if (telefones4 == null)
             System.out.println("Telefones na encontrados");
         else
