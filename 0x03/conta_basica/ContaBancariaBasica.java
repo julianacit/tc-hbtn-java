@@ -3,11 +3,11 @@ import exceptions.*;
 public class ContaBancariaBasica {
     private String numeracao;
     private double saldo;
-    private double taxaJuroAnual;
+    private double taxaJurosAnual;
 
-    public ContaBancariaBasica(String numeracao, double taxaJuroAnual) {
+    public ContaBancariaBasica(String numeracao, double taxaJurosAnual) {
         this.numeracao = numeracao;
-        this.taxaJuroAnual = taxaJuroAnual;
+        this.taxaJurosAnual = taxaJurosAnual;
         this.saldo = 0;
     }
 
@@ -19,8 +19,8 @@ public class ContaBancariaBasica {
         return saldo;
     }
 
-    public double getTaxaJuroAnual() {
-        return taxaJuroAnual;
+    public double getTaxaJurosAnual() {
+        return taxaJurosAnual;
     }
 
     public void depositar(double valor) throws OperacaoInvalidaException{
@@ -49,7 +49,7 @@ public class ContaBancariaBasica {
         if (this.saldo < 0) {
             return 0;
         }
-        return ((this.taxaJuroAnual/100.0) * this.saldo) / 12;
+        return ((this.taxaJurosAnual/100.0) * this.saldo) / 12;
     }
 
     public void aplicarAtualizacaoMensal() {
