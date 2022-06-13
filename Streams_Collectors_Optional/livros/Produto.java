@@ -11,7 +11,7 @@ public class Produto {
         this.preco = preco;
     }
 
-    @java.lang.Override
+    @Override
     public java.lang.String toString() {
         return  String.format("[%d] %s %s R$ %.2f", this.codigo, this.nome, this.categoria, this.preco);
     }
