@@ -24,11 +24,13 @@ public class Consulta {
                 .collect(Collectors.toList());
     }
     public static List<Produto> aplicar15PorcentoDescontoEletronicos(List<Produto> produtos) {
-        produtos.stream().filter(produto -> produto.getCategoria() == CategoriaProduto.ELETRONICO)
+        return produtos.stream()
                 .map(produto -> {
-                    produto.setPreco(produto.getPreco()-(produto.getPreco()*0.15));
+                    if (produto.getCategoria() == CategoriaProduto.ELETRONICO)
+                        produto.setPreco(produto.getPreco()-(produto.getPreco()*0.15));
                     return produto;
-                });
-        return produtos;
+                })
+                .collect(Collectors.toList());
+        //return produtos;
     }
 }
